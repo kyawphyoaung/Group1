@@ -1,0 +1,36 @@
+{
+  "cakedata" : [ null, {
+    "description" : "A perfect treat for the health conscious. This recipe uses the goodness of ragi flour and is then smothered with a chocolate ganache spiked with Kahlua liqueur.",
+    "flavor" : "Chocolate",
+    "icing" : "Kahula Ganache",
+    "id" : "CID0001",
+    "image" : "www.google.com",
+    "name" : "Coffee Cake",
+    "price" : 12000,
+    "side_deco" : "Milk",
+    "thumbnail" : "gs://opus-sakebakery.appspot.com/coffee_cake_thumb.jpg",
+    "top_deco" : "Chocolate Roll"
+  },{
+    "description" : "A perfect treat for the health conscious. This recipe uses the goodness of ragi flour and is then smothered with a chocolate ganache spiked with Kahlua liqueur.",
+    "flavor" : "Chocolate",
+    "icing" : "Kahula Ganache",
+    "id" : "CID0002",
+    "image" : "www.google.com",
+    "name" : "Turkish Cake",
+    "price" : 15000,
+    "side_deco" : "Milk",
+    "thumbnail" : "gs://opus-sakebakery.appspot.com/Turkish_Delight_Cake _thumb.jpg",
+    "top_deco" : "Chocolate Roll"
+  }, {
+    "description" : "A perfect treat for the health conscious. This recipe uses the goodness of ragi flour and is then smothered with a chocolate ganache spiked with Kahlua liqueur.",
+    "flavor" : "Chocolate",
+    "icing" : "Ganache",
+    "id" : "CID0003",
+    "image" : "www.google.com",
+    "name" : "East Village",
+    "price" : 20000,
+    "side_deco" : "Milk",
+    "thumbnail" : "gs://opus-sakebakery.appspot.com/East-village_thumb.jpg",
+    "top_deco" : "Chocolate Roll"
+  }]
+}
