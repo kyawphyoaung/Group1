@@ -32,7 +32,7 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = mInflater.inflate(R.layout.order_page, viewGroup, false);
+        View view = mInflater.inflate(R.layout.order_cart, viewGroup, false);
         return new CartDatalistAdapter.ViewHolder(view);
     }
 
