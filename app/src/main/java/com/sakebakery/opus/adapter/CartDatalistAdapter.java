@@ -32,16 +32,30 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = mInflater.inflate(R.layout.order_cart, viewGroup, false);
+        View view = mInflater.inflate(R.layout.order_page, viewGroup, false);
         return new CartDatalistAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.name_tv.setText(cartobjs.get(position).getCart_cake_name());
-        viewHolder.subtotal_tv.setText(cartobjs.get(position).getCart_sub_total());
-        viewHolder.quantity_tv.setText(cartobjs.get(position).getCart_quantity());
 
+        try{
+            viewHolder.name_tv.setText(cartobjs.get(position).getCart_cake_name());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            viewHolder.subtotal_tv.setText(cartobjs.get(position).getCart_sub_total() + "  MMK");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            viewHolder.quantity_tv.setText(cartobjs.get(position).getCart_quantity());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         try{
             Picasso.with(activity).load(cartobjs.get(position).getCart_thumbnail()).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).into(viewHolder.thumb_iv);
@@ -66,10 +80,9 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
         public ViewHolder(View view) {
             super(view);
             this.name_tv = view.findViewById(R.id.tv_cart_name);
-            this.subtotal_tv = view.findViewById(R.id.tv_subtotal);
+            this.subtotal_tv = view.findViewById(R.id.tv_cart_price);
             this.quantity_tv = view.findViewById(R.id.tv_cart_quantity);
             this.thumb_iv = view.findViewById(R.id.cart_image);
         }
-
     }
 }
