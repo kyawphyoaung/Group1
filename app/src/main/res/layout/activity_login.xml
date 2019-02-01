@@ -96,10 +96,15 @@
                     <Button
                         android:id="@+id/email_sign_in_button"
                         style="?android:textAppearanceSmall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorAccent"
+                        android:shadowColor="#666666"
+                        android:shadowRadius="5"
+                        android:shadowDy="0"
+                        android:shadowDx="0"
+                        android:background="@drawable/buttonshape"
                         android:text="@string/action_sign_in"
                         android:textColor="@android:color/white"
                         android:textStyle="bold" />
@@ -117,21 +122,12 @@
                     <Button
                         android:id="@+id/email_sign_in_button2"
                         style="?android:textAppearanceSmall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/black"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/buttonshape"
                         android:text="Create a new Account"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/email_sign_in_button3"
-                        style="?android:textAppearanceSmall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="13dp"
-                        android:background="@color/design_default_color_primary_dark"
-                        android:text="Login with Facebook Account"
                         android:textColor="@android:color/white"
                         android:textStyle="bold" />
 
