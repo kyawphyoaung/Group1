@@ -3,6 +3,7 @@ package com.sakebakery.opus.adapter;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,10 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
     private LayoutInflater mInflater;
     private Activity activity;
     private ArrayList<Cartobj> cartobjs;
+
+    int sub;
+    int subwithtax;
+    int finaltotal;
 
     public CartDatalistAdapter(Activity activity, ArrayList<Cartobj> cartobjs) {
         this.mInflater = LayoutInflater.from(activity);
@@ -62,6 +67,38 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        sub=Integer.parseInt(cartobjs.get(position).getCart_sub_total())*Integer.parseInt(cartobjs.get(position).getCart_quantity());
+        subwithtax= (int) (sub*0.05);
+        finaltotal= subwithtax +sub;
+
+        String s= String.valueOf(sub);
+        String tax=String.valueOf(subwithtax);
+        String st=String.valueOf(finaltotal);
+
+        Log.e("Subtotal",s);
+        Log.e("tax",tax);
+        Log.e("final_total",st);
+
+        try{
+            viewHolder.subtotalall_tv.setText(s);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            viewHolder.tax_tv.setText(tax);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            viewHolder.total_tv.setText(st);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
     }
 
     @Override
@@ -77,12 +114,21 @@ public class CartDatalistAdapter extends RecyclerView.Adapter<CartDatalistAdapte
         public TextView quantity_tv;
         public ImageView thumb_iv;
 
+        public TextView total_tv;
+        public TextView subtotalall_tv;
+        public TextView tax_tv;
+
+
         public ViewHolder(View view) {
             super(view);
             this.name_tv = view.findViewById(R.id.tv_cart_name);
             this.subtotal_tv = view.findViewById(R.id.tv_cart_price);
             this.quantity_tv = view.findViewById(R.id.tv_cart_quantity);
             this.thumb_iv = view.findViewById(R.id.cart_image);
+
+            this.total_tv=view.findViewById(R.id.tv_total);
+            this.tax_tv=view.findViewById(R.id.tv_tax);
+            this.subtotalall_tv=view.findViewById(R.id.tv_subtotal);
         }
     }
 }

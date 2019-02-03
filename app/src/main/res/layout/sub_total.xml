@@ -53,19 +53,19 @@
                     android:id="@+id/tv_subtotal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="99999 MMK" />
+                    android:text="65000 MMK" />
 
                 <TextView
                     android:id="@+id/tv_tax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="9999 MMK" />
+                    android:text="1200 MMK" />
 
                 <TextView
                     android:id="@+id/tv_total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="999999 MMK" />
+                    android:text="66200 MMK" />
             </LinearLayout>
 
         </LinearLayout>

@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, myprofile.class);
             startActivity(intent);
         } else if (id == R.id.nav_mycart) {
             Intent intent = new Intent(MainActivity.this, Cartlist_firebase_api.class);

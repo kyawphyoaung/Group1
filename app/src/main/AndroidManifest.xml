@@ -42,6 +42,9 @@
         </activity>
         <activity android:name=".create_account">
         </activity>
+        <activity android:name=".Cake_details">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,7 +1,9 @@
 package com.sakebakery.opus.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sakebakery.opus.Cake_details;
 import com.sakebakery.opus.obj.Cakeobj;
 import com.sakebakery.opus.R;
 import com.squareup.picasso.Picasso;
@@ -34,6 +37,7 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = mInflater.inflate(R.layout.displaycake, viewGroup, false);
         return new CakeImagelistAdapter.ViewHolder(view);
+
     }
 
     @Override
@@ -58,6 +62,14 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        viewHolder.parent_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, Cake_details.class);
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -72,6 +84,7 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
         public TextView flavor_tv;
         public TextView price_tv;
         public ImageView thumb_iv;
+        public CardView parent_view;
 
         public ViewHolder(View view) {
             super(view);
@@ -79,6 +92,7 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
             this.flavor_tv = view.findViewById(R.id.tv_cake_flavor);
             this.price_tv = view.findViewById(R.id.tv_cake_price);
             this.thumb_iv = view.findViewById(R.id.cake_thumbnail);
+            this.parent_view=view.findViewById(R.id.card_view);
         }
 
     }
