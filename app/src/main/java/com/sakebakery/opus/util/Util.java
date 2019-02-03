@@ -57,12 +57,19 @@ public class Util {
 
     public static String AutoID(String id){
 
-        String id_value = "";
+        String id_value;
 
         String[] part = id.split("(?<=\\D)(?=\\d)");
+
         String value_1  = part[0];
+
         int value_2 = Integer.parseInt(part[1]);
+
+        Log.e("nyima", String.valueOf(value_2));
+
         value_2 = value_2+1;
+
+        Log.e("mama", String.valueOf(value_2));
 
         id_value = value_1 + String.format("%04d", value_2);
 

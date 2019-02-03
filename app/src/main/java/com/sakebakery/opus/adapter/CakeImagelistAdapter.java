@@ -38,11 +38,21 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.name_tv.setText(cakeobjs.get(position).getCake_name());
-        viewHolder.flavor_tv.setText(cakeobjs.get(position).getCake_flavor());
-        viewHolder.price_tv.setText(cakeobjs.get(position).getCake_price());
-
-
+        try{
+            viewHolder.name_tv.setText(cakeobjs.get(position).getCake_name());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try{
+            viewHolder.flavor_tv.setText(cakeobjs.get(position).getCake_flavor());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try{
+            viewHolder.price_tv.setText(cakeobjs.get(position).getCake_price()+" MMK");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         try{
             Picasso.with(activity).load(cakeobjs.get(position).getCake_image()).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).into(viewHolder.thumb_iv);
         }catch (Exception e){

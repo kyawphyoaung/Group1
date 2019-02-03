@@ -28,5 +28,6 @@
     <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
     <string name="my_profile">My Profile</string>
+    <string name="pass_wrong">Password Wrong!</string>
 
 </resources>

@@ -23,7 +23,7 @@
             android:text="Create Cake Design Yourself" />
 
         <include
-            layout="@layout/displaycake"
+            layout="@layout/cake_list_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

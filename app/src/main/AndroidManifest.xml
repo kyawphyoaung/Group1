@@ -16,25 +16,32 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/opus"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login2"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Cakelist_firebase_api">
+
+        </activity>
+        <activity android:name=".Cartlist_firebase_api" />
+        <activity android:name=".UserFilter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cakelist_firebase_api" />
-        <activity android:name=".Cartlist_firebase_api" />
+        <activity android:name=".create_account">
+        </activity>
     </application>
 
 </manifest>

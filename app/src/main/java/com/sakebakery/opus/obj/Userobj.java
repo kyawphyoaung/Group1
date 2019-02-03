@@ -1,22 +1,36 @@
 package com.sakebakery.opus.obj;
 
 import java.io.Serializable;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+
+@DatabaseTable(tableName = "tbl_user")
 public class Userobj implements Serializable {
 
+    @DatabaseField
     private int active= 0;
 
+    @DatabaseField(id = true,index = true)
     private String user_id= "";
 
+    @DatabaseField
     private String user_name= "";
 
+    @DatabaseField
     private String user_email= "";
 
+    @DatabaseField
     private String user_password= "";
 
+    @DatabaseField
     private String user_address= "";
 
+    @DatabaseField
     private String user_phone= "";
+
+    @DatabaseField
+    private String user_dob= "";
 
     public int getActive() {
         return active;
@@ -74,6 +88,14 @@ public class Userobj implements Serializable {
         this.user_phone = user_phone;
     }
 
+    public String getUser_dob() {
+        return user_dob;
+    }
+
+    public void setUser_dob(String user_dob) {
+        this.user_dob = user_dob;
+    }
+
     @Override
     public String toString() {
         return "Userobj{" +
@@ -84,6 +106,7 @@ public class Userobj implements Serializable {
                 ", user_password='" + user_password + '\'' +
                 ", user_address='" + user_address + '\'' +
                 ", user_phone='" + user_phone + '\'' +
+                ", user_dob='" + user_dob + '\'' +
                 '}';
     }
 }
