@@ -94,14 +94,20 @@ public class Cakelist_firebase_api extends AppCompatActivity {
                     cakeobj.setCake_image(ds.child("thumbnail").getValue() + "");
                     cakeobj.setActive(Integer.parseInt(ds.child("active").getValue() + ""));
 
+                    try{
+                        if (cakeobj.getActive() == 1) {
+                            cakeObjs.add(cakeobj);
+                        }
 
-                    if (cakeobj.getActive() == 1) {
-                        cakeObjs.add(cakeobj);
+                        if (cakeObjs.size() == 0) {
+                            Toast.makeText(Cakelist_firebase_api.this, "No Data!", Toast.LENGTH_SHORT).show();
+                        }
+                        Log.e("DBerror", "No");
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        Log.e("DBerror", "Yes");
                     }
 
-                    if (cakeObjs.size() == 0) {
-                        Toast.makeText(Cakelist_firebase_api.this, "No Data!", Toast.LENGTH_SHORT).show();
-                    }
 
                 }
 

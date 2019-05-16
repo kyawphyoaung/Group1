@@ -63,7 +63,7 @@ public class UserFilter extends AppCompatActivity {
             Intent intent = new Intent(UserFilter.this, MainActivity.class);
             startActivity(intent);
         } else {
-            Intent intent = new Intent(UserFilter.this, LoginActivity.class);
+            Intent intent = new Intent(UserFilter.this, WelcomeActivity.class);
             startActivity(intent);
         }
     }

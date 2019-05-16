@@ -1,6 +1,7 @@
 package com.sakebakery.opus;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -38,6 +41,9 @@ public class Cartlist_firebase_api extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
+    private Button checkout_bt;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +58,18 @@ public class Cartlist_firebase_api extends AppCompatActivity {
         }else {
             Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
         }
+
+        checkout_bt = findViewById(R.id.bt_checkout);
+
+        checkout_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "List Event", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Cartlist_firebase_api.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 

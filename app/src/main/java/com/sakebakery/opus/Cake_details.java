@@ -26,6 +26,7 @@ public class Cake_details extends AppCompatActivity {
     private ArrayList<Cakeobj> cakeObjs;
     private ProgressDialog progressDialog;
     private Button btn_test;
+    private Button btn_addtocart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class Cake_details extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(Cake_details.this, Cakelist_firebase_api.class);
+                Intent intent = new Intent(Cake_details.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +45,17 @@ public class Cake_details extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(Cake_details.this, Cakelist_firebase_api.class);
+                Intent intent = new Intent(Cake_details.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_addtocart= findViewById(R.id.add_tocart);
+
+        btn_addtocart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(Cake_details.this, Cartlist_firebase_api.class);
                 startActivity(intent);
             }
         });

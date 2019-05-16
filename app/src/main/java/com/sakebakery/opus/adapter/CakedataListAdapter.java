@@ -30,7 +30,7 @@ public class CakedataListAdapter extends RecyclerView.Adapter<CakedataListAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = mInflater.inflate(R.layout.displaycake, viewGroup, false);
+        View view = mInflater.inflate(R.layout.cake_grid_layout, viewGroup, false);
         return new CakedataListAdapter.ViewHolder(view);
     }
 

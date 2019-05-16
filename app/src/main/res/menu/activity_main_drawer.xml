@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_myorders"
             android:icon="@drawable/myorder"
-            android:title="My Orders" />
+            android:title="My Orders (Beta)" />
         <item
             android:id="@+id/nav_fav"
             android:icon="@drawable/fav_icon"

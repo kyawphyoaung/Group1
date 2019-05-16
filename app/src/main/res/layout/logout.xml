@@ -70,7 +70,7 @@
                     android:layout_margin="5dp"
                     android:gravity="center"
                     android:paddingTop="3dp"
-                    android:text="Name" />
+                    android:text="Phyo Kyaw" />
 
                 <TextView
                     android:id="@+id/textView7"

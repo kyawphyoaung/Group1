@@ -233,7 +233,7 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/add_tocart"
                         android:layout_width="208dp"
                         android:layout_height="match_parent"
                         android:background="#000000"

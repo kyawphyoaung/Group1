@@ -35,7 +35,7 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = mInflater.inflate(R.layout.displaycake, viewGroup, false);
+        View view = mInflater.inflate(R.layout.cake_grid_layout, viewGroup, false);
         return new CakeImagelistAdapter.ViewHolder(view);
 
     }
@@ -53,7 +53,7 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
             e.printStackTrace();
         }
         try{
-            viewHolder.price_tv.setText(cakeobjs.get(position).getCake_price()+" MMK");
+            viewHolder.price_tv.setText(cakeobjs.get(position).getCake_price()+"MMK");
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -88,11 +88,11 @@ public class CakeImagelistAdapter extends RecyclerView.Adapter<CakeImagelistAdap
 
         public ViewHolder(View view) {
             super(view);
-            this.name_tv = view.findViewById(R.id.tv_cake_name);
-            this.flavor_tv = view.findViewById(R.id.tv_cake_flavor);
-            this.price_tv = view.findViewById(R.id.tv_cake_price);
-            this.thumb_iv = view.findViewById(R.id.cake_thumbnail);
-            this.parent_view=view.findViewById(R.id.card_view);
+            this.name_tv = view.findViewById(R.id.gtv_cake_name);
+            this.flavor_tv = view.findViewById(R.id.gtv_cake_flavor);
+            this.price_tv = view.findViewById(R.id.gtv_cake_price);
+            this.thumb_iv = view.findViewById(R.id.g_thumbnail);
+            this.parent_view=view.findViewById(R.id.gcard_view);
         }
 
     }

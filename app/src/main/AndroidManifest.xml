@@ -19,32 +19,46 @@
         android:roundIcon="@drawable/opus"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login2"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
+
         <activity android:name=".Cakelist_firebase_api">
 
         </activity>
+
         <activity android:name=".Cartlist_firebase_api" />
+
         <activity android:name=".UserFilter">
+        </activity>
+
+        <activity android:name=".startscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".create_account">
         </activity>
-        <activity android:name=".Cake_details">
 
+        <activity android:name=".Cake_details">
         </activity>
+
+        <activity android:name=".myprofile" />
+
+        <activity android:name=".WelcomeActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+
     </application>
 
 </manifest>
