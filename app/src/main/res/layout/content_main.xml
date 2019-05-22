@@ -14,18 +14,10 @@
         android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/bt_create"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:shadowColor="#666666"
-            android:shadowRadius="20"
-            android:text="Create Cake Design Yourself" />
-
         <include
             layout="@layout/cake_list_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="619dp" />
 
     </LinearLayout>
 

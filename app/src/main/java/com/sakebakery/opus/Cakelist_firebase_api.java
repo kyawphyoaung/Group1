@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -135,7 +136,8 @@ public class Cakelist_firebase_api extends AppCompatActivity {
 
         cakeImagelistAdapter = new CakeImagelistAdapter(Cakelist_firebase_api.this,cakeObjs);
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
 
         cake_list.setLayoutManager(mLayoutManager);
         cake_list.setItemAnimator(new DefaultItemAnimator());
