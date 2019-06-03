@@ -110,7 +110,8 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="16dp"
-                            android:background="@drawable/buttonshape"
+                            android:background="@drawable/mybutton"
+                            android:src="@android:drawable/button_onoff_indicator_on"
                             android:shadowColor="#666666"
                             android:shadowDx="0"
                             android:shadowDy="0"
@@ -136,7 +137,7 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_marginBottom="20dp"
-                            android:background="@drawable/buttonshape"
+                            android:background="@drawable/mybutton"
                             android:text="Create a new Account"
                             android:textColor="@android:color/white"
                             android:textStyle="bold" />

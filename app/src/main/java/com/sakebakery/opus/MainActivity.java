@@ -4,8 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,11 +38,25 @@ import com.google.firebase.database.ValueEventListener;
 import com.sakebakery.opus.adapter.CakeImagelistAdapter;
 import com.sakebakery.opus.obj.Cakeobj;
 import com.sakebakery.opus.util.Util;
+import android.content.Context;
+import android.support.v4.view.GestureDetectorCompat;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.RotateAnimation;
+import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ViewFlipper vfMyViewFlipper;
+
+    private ViewFlipper mViewFlipper;
+    private Context mContext;
+    private GestureDetectorCompat mDetector;
 
     private Button btn_test;
     private CakeImagelistAdapter cakeImagelistAdapter;
@@ -59,35 +75,65 @@ public class MainActivity extends AppCompatActivity
 
     public ProgressDialog mProgressDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mContext = this;
+
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+//        bottomNav.setOnNavigationItemSelectedListener(navListener);
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new CakeList()).commit();
+
+        vfMyViewFlipper = (ViewFlipper) findViewById(R.id.vfMyViewFlipper);
+        vfMyViewFlipper.setOnTouchListener(new OnFlingListener(this) {
+            @Override
+            public void onRightToLeft() {
+                vfMyViewFlipper.setInAnimation(getApplicationContext(), R.anim.righ_to_left);
+                vfMyViewFlipper.showPrevious();
+            }
+
+            @Override
+            public void onLeftToRight() {
+                vfMyViewFlipper.setInAnimation(getApplicationContext(), R.anim.left_to_right);
+                vfMyViewFlipper.showNext();
+            }
+
+            @Override
+            public void onBottomToTop() {
+
+            }
+
+            @Override
+            public void onTopToBottom() {
+
+            }
+        });
+        vfMyViewFlipper.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
 
 
-        cake_list= findViewById(R.id.cake_list);
+        cake_list = findViewById(R.id.cake_list);
 
         cakeObjs = new ArrayList<>();
 
-        if(Util.isOnline(getApplicationContext())){
-            LoadFirebaseDB();
-        }else {
-            Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
-        }
+//        if (Util.isOnline(getApplicationContext())) {
+//            LoadFirebaseDB();
+//        } else {
+//            Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
+//        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -97,7 +143,37 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button bhome = (Button) findViewById(R.id.btn_shop);
+        bhome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Cakelist_firebase_api.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+//    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+//            new BottomNavigationView.OnNavigationItemSelectedListener() {
+//                @Override
+//                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                    Fragment selectedFragment = null;
+//
+//                    switch (menuItem.getItemId()) {
+//                        case R.id.nav_home:
+//                            selectedFragment = new CakeList();
+//                            break;
+//                        case R.id.nav_shop:
+//                            selectedFragment = new homepage();
+//                            break;
+//                    }
+//
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+//                    return true;
+//                }
+//            };
 
     @Override
     public void onBackPressed() {
@@ -184,73 +260,73 @@ public class MainActivity extends AppCompatActivity
         firebaseAnalytics.setCurrentScreen(MainActivity.this,"FirebaseAPI_Screen",null);
     }
 
-    public void LoadFirebaseDB() {
+//    public void LoadFirebaseDB() {
+//
+//
+//        if (progressDialog == null) {
+//            progressDialog = new ProgressDialog(MainActivity.this);
+//            progressDialog.setCancelable(true);
+//            progressDialog.setMessage("Loading...");
+//            progressDialog.show();
+//        }
+//
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        mDatabase.child("cakedata").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                Log.d("Cake_list", "" + dataSnapshot.toString());
+//
+//                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+//
+//                    Cakeobj cakeobj = new Cakeobj();
+//                    cakeobj.setCake_id(ds.child("id").getValue() + "");
+//                    cakeobj.setCake_name(ds.child("name").getValue() + "");
+//                    cakeobj.setCake_flavor(ds.child("flavor").getValue() + "");
+//                    cakeobj.setCake_price(ds.child("price").getValue() + "");
+//                    cakeobj.setCake_image(ds.child("thumbnail").getValue() + "");
+//                    cakeobj.setActive(Integer.parseInt(ds.child("active").getValue() + ""));
+//
+//
+//                    if (cakeobj.getActive() == 1) {
+//                        cakeObjs.add(cakeobj);
+//                    }
+//
+//                    if (cakeObjs.size() == 0) {
+//                        Toast.makeText(MainActivity.this, "No Data!", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                }
+//
+//                LoadUI();
+//
+//                DismissDialog();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                DismissDialog();
+//            }
+//        });
+//
+//    }
+
+//    public void DismissDialog() {
+//        if (progressDialog != null && progressDialog.isShowing()) {
+//            progressDialog.dismiss();
+//        }
+//    }
 
 
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setCancelable(true);
-            progressDialog.setMessage("Loading...");
-            progressDialog.show();
-        }
-
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("cakedata").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                Log.d("Cake_list", "" + dataSnapshot.toString());
-
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-
-                    Cakeobj cakeobj = new Cakeobj();
-                    cakeobj.setCake_id(ds.child("id").getValue() + "");
-                    cakeobj.setCake_name(ds.child("name").getValue() + "");
-                    cakeobj.setCake_flavor(ds.child("flavor").getValue() + "");
-                    cakeobj.setCake_price(ds.child("price").getValue() + "");
-                    cakeobj.setCake_image(ds.child("thumbnail").getValue() + "");
-                    cakeobj.setActive(Integer.parseInt(ds.child("active").getValue() + ""));
-
-
-                    if (cakeobj.getActive() == 1) {
-                        cakeObjs.add(cakeobj);
-                    }
-
-                    if (cakeObjs.size() == 0) {
-                        Toast.makeText(MainActivity.this, "No Data!", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-
-                LoadUI();
-
-                DismissDialog();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                DismissDialog();
-            }
-        });
-
-    }
-
-    public void DismissDialog() {
-        if (progressDialog != null && progressDialog.isShowing()) {
-            progressDialog.dismiss();
-        }
-    }
-
-
-    public void LoadUI() {
-
-        cakeImagelistAdapter = new CakeImagelistAdapter(MainActivity.this,cakeObjs);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
-
-
-        cake_list.setLayoutManager(mLayoutManager);
-        cake_list.setItemAnimator(new DefaultItemAnimator());
-        cake_list.setAdapter(cakeImagelistAdapter);
-
-    }
+//    public void LoadUI() {
+//
+//        cakeImagelistAdapter = new CakeImagelistAdapter(MainActivity.this,cakeObjs);
+//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+//
+//
+//        cake_list.setLayoutManager(mLayoutManager);
+//        cake_list.setItemAnimator(new DefaultItemAnimator());
+//        cake_list.setAdapter(cakeImagelistAdapter);
+//
+//    }
 }
