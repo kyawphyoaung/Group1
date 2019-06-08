@@ -215,7 +215,7 @@
 
 
         <Button
-            android:id="@+id/ButtonAddToCart"
+            android:id="@+id/btnicing"
             style="@style/Theme.MaterialButton"
             android:layout_width="147dp"
             android:layout_height="39dp"

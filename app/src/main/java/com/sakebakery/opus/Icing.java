@@ -52,7 +52,7 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
         }
         else
         {
-            imgDestination.setImageResource(R.drawable.planec);
+            imgDestination.setImageResource(R.drawable.cakechoco);
         }
 
 
@@ -65,27 +65,33 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
 
                 if (clipData2.equals("s")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","strawberry");
+                    intent.putExtra("message1", "strawberry");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 } else if (clipData2.equals("bb")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","blueberry");
+                    intent.putExtra("message1", "blueberry");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 } else if (clipData2.equals("g")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","grape");
+                    intent.putExtra("message1", "grape");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 } else if (clipData2.equals("butter")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","butter");
+                    intent.putExtra("message1", "butter");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 } else if (clipData2.equals("c")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","chocolate");
+                    intent.putExtra("message1", "chocolate");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 } else if (clipData2.equals("w")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message1","whip");
+                    intent.putExtra("message1", "whip");
+                    intent.putExtra("message2", str);
                     startActivity(intent);
                 }
 
@@ -191,17 +197,17 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
                 else {
 
                     if (clipData2.equals("s")) {
-                        imgDestination.setImageResource(R.drawable.plane);
+                        imgDestination.setImageResource(R.drawable.cakestraw);
                     } else if (clipData2.equals("bb")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination.setImageResource(R.drawable.cakeblue);
                     } else if (clipData2.equals("g")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination.setImageResource(R.drawable.cakegrape);
                     } else if (clipData2.equals("butter")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination.setImageResource(R.drawable.cakebutter);
                     } else if (clipData2.equals("c")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination.setImageResource(R.drawable.cakechoco);
                     } else if (clipData2.equals("w")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination.setImageResource(R.drawable.cakewhite);
                     }
                     v.invalidate();
                     return true;

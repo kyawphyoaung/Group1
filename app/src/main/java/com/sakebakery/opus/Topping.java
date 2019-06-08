@@ -76,6 +76,8 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
             }
         }
 
+
+
         Button mClickButton2 = (Button)findViewById(R.id.btntop);
 
 
@@ -83,37 +85,40 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
             @Override
             public void onClick(View v) {
 
-                if (clipData.equals("s")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","strawberry");
-
-                    startActivity(intent);
-                } else if (clipData.equals("bb")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","chocolate");
-
-                    startActivity(intent);
-                } else if (clipData.equals("g")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","strawberry");
-
-                    startActivity(intent);
-                } else if (clipData.equals("butter")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","strawberry");
-
-                    startActivity(intent);
-                } else if (clipData.equals("c")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","strawberry");
-
-                    startActivity(intent);
-                } else if (clipData.equals("w")) {
-                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-                    intent.putExtra("message","strawberry");
-
-                    startActivity(intent);
-                }
+                Toast.makeText(Topping.this, "Your order has been submitted!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+//                if (clipData.equals("s")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","strawberry");
+//
+//                    startActivity(intent);
+//                } else if (clipData.equals("bb")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","chocolate");
+//
+//                    startActivity(intent);
+//                } else if (clipData.equals("g")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","strawberry");
+//
+//                    startActivity(intent);
+//                } else if (clipData.equals("butter")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","strawberry");
+//
+//                    startActivity(intent);
+//                } else if (clipData.equals("c")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","strawberry");
+//
+//                    startActivity(intent);
+//                } else if (clipData.equals("w")) {
+//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+//                    intent.putExtra("message","strawberry");
+//
+//                    startActivity(intent);
+//                }
 
             }
         });
