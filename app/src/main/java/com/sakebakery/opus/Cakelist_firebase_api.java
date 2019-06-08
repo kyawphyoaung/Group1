@@ -12,6 +12,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -57,6 +58,14 @@ public class Cakelist_firebase_api extends AppCompatActivity {
         }else {
             Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
         }
+
+        Button bhome = (Button) findViewById(R.id.btn_home);
+        bhome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Cakelist_firebase_api.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

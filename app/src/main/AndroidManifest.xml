@@ -59,6 +59,19 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
 
+        <activity android:name=".Topping"></activity>
+        <activity android:name=".Icing" />
+
+        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".ShoppingCartActivity" /> <!-- <activity android:name=".HomeDashboard" -->
+        <activity
+            android:name=".Create">
+        </activity>
+        <activity android:name=".CatalogActivity"/>
+        <activity android:name=".homedetail" />
+
+
+
     </application>
 
 </manifest>

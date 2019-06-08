@@ -15,7 +15,6 @@
     </style>
 
 
-
     <!--<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
     <!--Stack Over flow -->
@@ -51,6 +50,17 @@
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/dot_dark_screen3</item>
+        <item name="android:textColor">@color/my_text_color</item>
+    </style>
+
+    <style name="Theme.MaterialButton" parent="AppTheme">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
 </resources>

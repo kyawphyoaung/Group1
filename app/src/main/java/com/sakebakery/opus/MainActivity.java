@@ -13,6 +13,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +26,9 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -74,6 +78,17 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth mAuth;
 
     public ProgressDialog mProgressDialog;
+    private LinearLayout mGallery;
+    private int[] mImgIds;
+
+    private LinearLayout mGallerycake;
+    private int[] mImgIdscake;
+
+    private LayoutInflater mInflater;
+    private HorizontalScrollView horizontalScrollView;
+
+    private ImageView homecake;
+
 
 
     @Override
@@ -81,6 +96,23 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+        mInflater = LayoutInflater.from(this);
+        initData();
+        initView();
+
+        initDatacake();
+        initViewcake();
+
+        homecake = (ImageView) findViewById(R.id.id_index_gallery_cake_image);
+
+        homecake.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, homedetail.class);
+                startActivity(intent);
+            }
+        });
+
 
 //        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
 //        bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -144,10 +176,26 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button bhome = (Button) findViewById(R.id.btn_shop);
-        bhome.setOnClickListener(new View.OnClickListener() {
+        Button bshop = (Button) findViewById(R.id.btn_shop);
+        bshop.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Cakelist_firebase_api.class);
+                Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bnew = (Button) findViewById(R.id.btn_new);
+        bnew.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Create.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bcart = (Button) findViewById(R.id.btn_cart);
+        bcart.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
             }
         });
@@ -155,6 +203,49 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    private void initData()
+    {
+        mImgIds = new int[] { R.drawable.blockfive, R.drawable.blocksix, R.drawable.blockone, R.drawable.blocktwo,R.drawable.blockthree, R.drawable.blockfour
+        };
+    }
+    private void initView()
+    {
+        mGallery = (LinearLayout) findViewById(R.id.id_gallery);
+
+        for (int i = 0; i < mImgIds.length; i++)
+        {
+
+            View view = mInflater.inflate(R.layout.activity_gallery_item,
+                    mGallery, false);
+            ImageView img = (ImageView) view
+                    .findViewById(R.id.id_index_gallery_item_image);
+            img.setImageResource(mImgIds[i]);
+            mGallery.addView(view);
+        }
+
+    }
+
+    private void initDatacake()
+    {
+        mImgIdscake = new int[] { R.drawable.rumcake, R.drawable.christmas, R.drawable.royal_classic, R.drawable.vanilla
+        };
+    }
+
+    private void initViewcake()
+    {
+        mGallerycake = (LinearLayout) findViewById(R.id.id_gallerycake);
+
+        for (int i = 0; i < mImgIdscake.length; i++)
+        {
+
+            View view = mInflater.inflate(R.layout.activity_gallery_cakes,
+                    mGallerycake, false);
+            ImageView imgcake = (ImageView) view
+                    .findViewById(R.id.id_index_gallery_cake_image);
+            imgcake.setImageResource(mImgIdscake[i]);
+            mGallerycake.addView(view);
+        }
+    }
 //    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
 //            new BottomNavigationView.OnNavigationItemSelectedListener() {
 //                @Override

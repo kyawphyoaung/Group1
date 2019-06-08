@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         btncreate = findViewById(R.id.create_accountbt);
 
-        btncreate.setOnClickListener(new View.OnClickListener(){
+        btncreate.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Create an Account", Toast.LENGTH_SHORT).show();
@@ -231,8 +231,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
-            mdrawernavprofile = findViewById(R.id.nav_profile);
-            mdrawernavprofile.setText(R.string.my_profile);
 
         } else {
             mStatusTextView.setText(R.string.signed_out);

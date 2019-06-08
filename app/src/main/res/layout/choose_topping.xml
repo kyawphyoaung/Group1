@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientlayout"
+    tools:context=".Icing">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TextView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/raleway"
+                android:paddingTop="10dp"
+                android:text="Topping Options"
+                android:textColor="#ffffff"
+                android:textSize="25dip"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="vertical"
+            android:background="#FDFCFC">
+
+            <ImageView
+                android:id="@+id/toppingDestination"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/circle_border"
+                android:layout_marginTop="30dp"
+                android:tag="Destination" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Choose Topping"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E91E63">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/realwhite">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sprinkle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:tag="sprinkle"
+                        app:srcCompat="@drawable/stopping" />
+
+                    <ImageView
+                        android:id="@+id/bberry"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:tag="bberry"
+                        app:srcCompat="@drawable/bstop" />
+
+
+                    <ImageView
+                        android:id="@+id/sberry"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:tag="sberry"
+                        app:srcCompat="@drawable/sttop" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btntop"
+            style="@style/Theme.MaterialButton"
+            android:layout_width="170dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dip"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/round_corners"
+            android:elevation="10dp"
+            android:fontFamily="@font/raleway"
+            android:text="Next"
+            android:textAlignment="center"
+            android:textColor="@color/browser_actions_bg_grey"
+            android:textSize="18dp"
+            android:textStyle="bold"></Button>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+

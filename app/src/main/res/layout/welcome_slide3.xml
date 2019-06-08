@@ -11,18 +11,18 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/ic_discount" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/slide_3_title"
+            android:text="Customize Your Cakes"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_title"
+            android:textSize="36dp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="@dimen/img_width_height"
+            android:src="@drawable/ooo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,10 +30,10 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="@string/slide_3_desc"
+            android:text="Show Your Creativity !!!"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_desc" />
+            android:textSize="26dp" />
 
     </LinearLayout>
 

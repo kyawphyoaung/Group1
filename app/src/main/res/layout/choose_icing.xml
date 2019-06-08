@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientlayout"
+    tools:context=".DragandDrop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TextView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/raleway"
+                android:paddingTop="10dp"
+                android:text="Icing Options"
+                android:textColor="#ffffff"
+                android:textSize="25dip"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="268dp"
+            android:background="#F8F5F5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/icingDestination"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/circle_border"
+                android:tag="Destination" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Choose Flavour"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="257dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/Sicing"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:tag="s"
+                                app:srcCompat="@drawable/strawberryicing" />
+
+                            <ImageView
+                                android:id="@+id/Berryicing"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:tag="bb"
+                                app:srcCompat="@drawable/bicing" />
+
+                            <ImageView
+                                android:id="@+id/Grapeicing"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:tag="g"
+                                app:srcCompat="@drawable/grapecream" />
+
+                            <ImageView
+                                android:id="@+id/Buttericing"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:tag="butter"
+                                app:srcCompat="@drawable/buttercream" />
+
+                            <ImageView
+                                android:id="@+id/Chocoicing"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:tag="c"
+                                app:srcCompat="@drawable/chocof" />
+
+                            <ImageView
+                                android:id="@+id/Whipicing"
+                                android:layout_width="90dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:tag="w"
+                                app:srcCompat="@drawable/whip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="19dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_weight="1"
+                                android:text="Strawberry" />
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="27dp"
+                                android:layout_marginRight="33dp"
+                                android:layout_weight="1"
+                                android:text="Blueberry" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:text="Grape" />
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_weight="1"
+                                android:text="Butter Cream" />
+
+                            <TextView
+                                android:id="@+id/textView14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_weight="1"
+                                android:text="Chocolate" />
+
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Whipped Cream" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/ButtonAddToCart"
+            style="@style/Theme.MaterialButton"
+            android:layout_width="147dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_corners"
+            android:elevation="10dp"
+            android:fontFamily="@font/raleway"
+            android:text="Next"
+            android:textAlignment="center"
+            android:textColor="@color/browser_actions_bg_grey"
+            android:textSize="18dp"
+            android:textStyle="bold"></Button>
+    </LinearLayout>
+
+</RelativeLayout>
